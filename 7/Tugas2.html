@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULIR PENDAFTARAN CALON SISWA/SISWI MTs</title>
+    <style>
+        /* Pengaturan umum */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 20px;
+            font-size: 12pt;
+            background-color: #fff;
+        }
+
+        .form-container {
+            width: 750px;
+            margin: 0 auto;
+            border: 1px solid white; /* Batas putih agar terlihat seperti formulir cetak */
+            padding: 10px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 16pt;
+            color: #00008b; /* Warna biru gelap */
+            letter-spacing: 1px;
+        }
+
+        .header .tahun-ajaran {
+            margin: 5px 0 10px 0;
+            font-size: 12pt;
+        }
+
+        .contact-info {
+            font-size: 10pt;
+            margin-bottom: 10px;
+        }
+
+        .contact-info div {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .contact-info span {
+            display: inline-block;
+            white-space: nowrap;
+        }
+        
+        .divider {
+            border-top: 2px solid #00008b;
+            margin-bottom: 20px;
+        }
+
+        /* Bagian Formulir */
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-decoration: underline;
+            font-size: 12pt;
+        }
+        
+        .section-title sup {
+            font-weight: normal;
+            font-size: 8pt;
+            text-decoration: none;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .form-label {
+            width: 300px; /* Lebar untuk nomor dan label */
+            font-size: 11pt;
+            white-space: nowrap;
+        }
+        
+        .form-label span {
+            display: inline-block;
+            width: 15px; /* Lebar untuk nomor */
+        }
+
+        .form-input {
+            flex-grow: 1;
+            border-bottom: 1px solid #000;
+            padding: 0 5px;
+            height: 18px; /* Tinggi baris input */
+            display: flex;
+            align-items: center;
+            font-size: 11pt;
+        }
+
+        .form-input.small {
+            width: 150px;
+            flex-grow: 0;
+        }
+
+        .form-input.medium {
+            width: 300px;
+            flex-grow: 0;
+        }
+
+        /* Tata Letak Khusus (Nomor Pendaftaran) */
+        .registration-box {
+            float: right;
+            width: 80px;
+            height: 80px;
+            border: 1px solid black;
+            text-align: center;
+            padding-top: 5px;
+            font-size: 9pt;
+        }
+        
+        /* Layout untuk baris "Tempat, Tgl Lahir" */
+        .temtap-tgl-lahir .form-input {
+            width: 150px;
+            flex-grow: 0;
+            margin-right: 5px;
+        }
+
+        /* Layout untuk baris "Alamat" */
+        .alamat-row .form-input {
+            width: 350px; /* Disesuaikan agar bisa muat "bersaudara" */
+            flex-grow: 0;
+            margin-right: 5px;
+        }
+        
+        .alamat-row .text-label {
+            margin: 0 5px;
+            font-size: 11pt;
+        }
+        
+        /* Tanda Tangan */
+        .signatures {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 11pt;
+        }
+
+        .signature-item {
+            width: 45%;
+            text-align: center;
+        }
+
+        .signature-item p {
+            margin-bottom: 50px;
+            margin-top: 5px;
+        }
+
+        .signature-item .date {
+            text-align: right;
+            margin-bottom: 5px;
+        }
+
+        .signature-name {
+            border-bottom: 1px dotted black;
+            display: inline-block;
+            width: 200px;
+            height: 15px;
+        }
+
+        /* Keterangan */
+        .keterangan {
+            margin-top: 30px;
+            font-size: 10pt;
+            border-top: 1px solid black;
+            padding-top: 10px;
+        }
+
+        .keterangan p {
+            margin: 2px 0;
+        }
+        
+        /* Love Icon - menggunakan karakter khusus */
+        .love-icon {
+            float: left;
+            font-size: 50pt;
+            line-height: 0.7;
+            margin-right: 20px;
+            color: #000;
+            opacity: 0.5; /* Agar terlihat buram/seperti watermark */
+        }
+        
+        /* Clearfix untuk float */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <div class="clearfix">
+        <span class="love-icon">♡</span>
+        <div class="registration-box">
+            No.<br>Pendaftaran
+        </div>
+        <div class="header">
+            <h2>FORMULIR PENDAFTARAN</h2>
+            <h2>CALON SISWA/SISWI MTs ..........................</h2>
+            <div class="tahun-ajaran">TAHUN PELAJARAN 2016/2017</div>
+            <div class="contact-info">
+                Sekretariat: Jln. ........................ Kode Pos: ...... |
+                Email: ................@yahoo.co.id |
+                Website: http://...............com
+            </div>
+        </div>
+    </div>
+    
+    <div class="divider"></div>
+
+    <form action="#" method="post">
+        
+        <div class="section-title">A. DATA PRIBADI CALON SISWA<sup>**)</sup></div>
+        
+        <div class="form-group">
+            <div class="form-label"><span>1.</span> Nama Lengkap</div>
+            <div class="form-input"></div>
+        </div>
+        
+        <div class="form-group">
+            <div class="form-label"><span>2.</span> Jenis Kelamin</div>
+            <div class="form-input"></div>
+        </div>
+        
+        <div class="form-group temtap-tgl-lahir">
+            <div class="form-label"><span>3.</span> Tempat, Tgl. Lahir</div>
+            <div class="form-input medium"></div>,
+            <div class="form-input medium"></div>
+        </div>
+        
+        <div class="form-group">
+            <div class="form-label"><span>4.</span> Alamat</div>
+            <div class="form-input"></div>
+        </div>
+        
+        <div class="form-group alamat-row">
+            <div class="form-label"><span>5.</span> Anak ke</div>
+            <div class="form-input small"></div>
+            <div class="text-label">dari</div>
+            <div class="form-input small"></div>
+            <div class="text-label">bersaudara</div>
+        </div>
+
+        <div class="section-title">B. DATA ORANGTUA/WALI CALON SISWA<sup>**)</sup></div>
+
+        <div class="form-group">
+            <div class="form-label"><span>1.</span> Nama Ayah</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>2.</span> Nama Ibu</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>3.</span> Pekerjaan Ayah</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>4.</span> Pekerjaan Ibu</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>5.</span> Alamat</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>6.</span> No. Telp/HP</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>7.</span> Nama Wali</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>8.</span> Pekerjaan Wali</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>9.</span> Alamat Wali</div>
+            <div class="form-input"></div>
+        </div>
+
+        <div class="section-title">C. ASAL SEKOLAH</div>
+
+        <div class="form-group">
+            <div class="form-label"><span>1.</span> Nama Sekolah</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>2.</span> Status Sekolah</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>3.</span> Alamat Sekolah</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>4.</span> NISN</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>5.</span> Nomor Peserta UN SD</div>
+            <div class="form-input"></div>
+        </div>
+
+        <div class="section-title">D. DATA SKHU/IJAZAH</div>
+
+        <div class="form-group">
+            <div class="form-label"><span>1.</span> Nomor SKHU</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>2.</span> Jumlah Nilai UN</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <div class="form-label"><span>3.</span> Nilai Rata-rata UN</div>
+            <div class="form-input"></div>
+        </div>
+
+        <div class="signatures">
+            <div class="signature-item">
+                Mengetahui/Menyetujui:<br>
+                Orangtua/Wali Calon Siswa
+                <p>( ........................................ )</p>
+            </div>
+            <div class="signature-item">
+                <div class="date">......................................, 2016</div>
+                Calon Siswa
+                <p>( ........................................ )</p>
+            </div>
+        </div>
+        
+        <div class="signatures">
+            <div class="signature-item">
+                <div class="keterangan">
+                    Keterangan:<br>
+                    <sup>*)</sup> *Diisi sesuai dengan ijazah/SKHU<br>
+                    <sup>**)</sup> *Diisi jika tinggal bersama Wali
+                </div>
+            </div>
+            <div class="signature-item">
+                Petugas
+                <p>( ........................................ )</p>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
