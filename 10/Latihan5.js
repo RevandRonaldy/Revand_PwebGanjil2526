@@ -1,0 +1,11 @@
+var a = 10;
+var b = 5;
+document.writeln("Perkalian : " + a + "*" + b + "=" + (a * b));
+document.writeln("<br>");
+document.writeln("Pembagian : " + a + "/" + b + "=" + (a / b));
+document.writeln("<br>");
+document.writeln("Penjumlahan : " + a + "+" + b + "=" + (a + b));
+document.writeln("<br>");
+document.writeln("Pengurangan : " + a + "-" + b + "=" + (a - b));
+document.writeln("<br>");
+document.writeln("Modulus : " + a + "%" + b + "=" + (a % b));
