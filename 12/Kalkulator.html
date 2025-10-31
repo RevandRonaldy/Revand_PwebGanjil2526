@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Membuat Calculator</h1>
+    <hr>
+    <p>Bilangan 1 : <input type="text" id="bil1"></p>
+    <p>Bilangan 2 : <input type="text" id="bil2"></p>
+    <hr>
+
+    <button onclick="hitung('+')">+</button>
+    <button onclick="hitung('-')">-</button>
+    <button onclick="hitung('')">*</button>
+    <button onclick="hitung('/')">/</button>
+    <button onclick="hapus()">C</button>
+
+    <script>
+        function hitung(operator) {
+            var bil1 = parseFloat(document.getElementById("bil1").value);
+            var bil2 = parseFloat(document.getElementById("bil2").value);
+            var hasil = 0;
+
+            if (isNaN(bil1) || isNaN(bil2)) {
+                alert("Masukkan angka yang valid!");
+                return;
+            }
+
+            switch(operator) {
+                case '+':
+                    hasil = bil1 + bil2;
+                    break;
+                case '-':
+                    hasil = bil1 - bil2;
+                    break;
+                case '*':
+                    hasil = bil1 * bil2;
+                    break;
+                case '/':
+                    if (bil2 === 0) {
+                        alert("Tidak bisa dibagi dengan nol!");
+                        return;
+                    }
+                    hasil = bil1 / bil2;
+                    break;
+            }
+            alert("Hasil: " + hasil);
+        }
+
+        function hapus() {
+            document.getElementById("bil1").value = "";
+            document.getElementById("bil2").value = "";
+        }
+    </script>
+</body>
+</html>
