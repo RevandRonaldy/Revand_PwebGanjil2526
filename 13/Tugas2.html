@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Indeks Prestasi</title>
+</head>
+<body>
+    <table border="1" width="80%" style="margin: 0 auto;">
+        <tr>
+            <td rowspan="2"><img src="igasar.png" alt="Logo"></td>
+            <th colspan="4"><h2>Menghitung Indeks Prestasi</h2></th>
+        </tr>
+        <tr>
+            <th colspan="4"><h2>Peserta didik SMK Igasar Pindad Bandung</h2></th>
+        </tr>
+        <tr>
+            <td>Quiz (10%) : <input type="text" size="16" name="quiz" id="quiz"></td>
+            <td>Tugas (20%) : <input type="text" size="16" name="tugas" id="tugas"></td>
+            <td>UTS (30%) : <input type="text" size="16" name="uts" id="uts"></td>
+            <td>UAS (40%) : <input type="text" size="16" name="uas" id="uas"></td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center" style="padding: 15px;">
+                <button onclick="hitungIP()">Hitung</button>
+                <button onclick="ulangIP()">Ulang</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center">
+                Nilai Akhir : <input type="text" size="4" name="nilaiAkhir" id="nilaiAkhir" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center">
+                Indeks Prestasi : <input type="text" size="3" name="indeksPrestasi" id="indeksPrestasi" readonly>
+                Keterangan : <input type="text" size="19" name="keterangan" id="keterangan" readonly>
+            </td>
+        </tr>
+    </table>
+    <script src="Tugas2.js"></script>
+</body>
+</html>
